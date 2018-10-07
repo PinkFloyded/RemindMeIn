@@ -8,75 +8,71 @@
     tools:context="com.pinkfloyded.remindmein.MainActivity">
 
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16"/>
-
-    <View
-        android:id="@+id/view"
+    <com.pinkfloyded.remindmein.TimerBackgroundView
+        android:id="@+id/timerBackgroundView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/main_clock_background"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline2"
-        app:layout_constraintWidth_percent="0.45"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.65"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/minsRemainingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="14"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/view"/>
+        android:textSize="80sp"
+        app:layout_constraintBottom_toTopOf="@+id/minsLabelTextView"
+        app:layout_constraintEnd_toEndOf="@+id/timerBackgroundView"
+        app:layout_constraintStart_toStartOf="@+id/timerBackgroundView"
+        app:layout_constraintTop_toBottomOf="@+id/timerBackgroundView"
+        tools:text="19"/>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/minsLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="mins"
-        android:textSize="15sp"
+        android:text="@string/mins"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/timerBackgroundView"
+        app:layout_constraintEnd_toEndOf="@+id/minsRemainingTextView"
+        app:layout_constraintStart_toStartOf="@+id/minsRemainingTextView"
+        app:layout_constraintTop_toBottomOf="@+id/minsRemainingTextView"/>
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
         android:textAlignment="center"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/timerBackgroundView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
         tools:text="Water heater"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/controlButton"
         android:layout_width="0dp"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        tools:text="Cancel"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/timerBackgroundView"
+        app:layout_constraintStart_toStartOf="@+id/timerBackgroundView"
+        app:layout_constraintTop_toBottomOf="@+id/timerBackgroundView"
+        tools:text="Cancel"/>
 
 
 </android.support.constraint.ConstraintLayout>
