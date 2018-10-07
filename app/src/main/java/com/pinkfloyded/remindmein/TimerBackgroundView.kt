@@ -2,8 +2,7 @@ package com.pinkfloyded.remindmein
 
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewCompat
+import androidx.core.content.ContextCompat
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
@@ -40,10 +39,10 @@ class TimerBackgroundView(context: Context, attrs: AttributeSet?) : FrameLayout(
     private fun refreshBackground() {
         if (isRunning) {
             indeterminateProgressBar.visibility = View.VISIBLE
-            ViewCompat.setBackground(this, null)
+            background = null
         } else {
             indeterminateProgressBar.visibility = INVISIBLE
-            ViewCompat.setBackground(this, circularDrawable)
+            background = circularDrawable
         }
     }
 
@@ -65,7 +64,7 @@ class TimerBackgroundView(context: Context, attrs: AttributeSet?) : FrameLayout(
 
         circularDrawable.shape = GradientDrawable.OVAL
         circularDrawable.setStroke(strokeWidthPx.roundToInt(), strokeColor)
-        ViewCompat.setBackground(this, circularDrawable)
+        background = circularDrawable
     }
 
 }

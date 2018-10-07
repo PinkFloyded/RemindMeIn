@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">RemindMeIn</string>
     <string name="mins">mins</string>
+    <string name="alarm_label_hint">Remind me to</string>
 </resources>
