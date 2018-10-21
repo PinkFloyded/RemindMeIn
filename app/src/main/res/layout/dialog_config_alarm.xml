@@ -13,6 +13,8 @@
             android:id="@+id/nameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:selectAllOnFocus="true"
+            android:inputType="textCapWords"
             android:hint="@string/alarm_label_hint"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -24,7 +26,9 @@
         <AutoCompleteTextView
             android:id="@+id/timeAutocompleteTextView"
             android:layout_width="match_parent"
+            android:inputType="number"
             android:layout_height="wrap_content"
+            android:selectAllOnFocus="true"
             android:hint="in(mins)"/>
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>
